@@ -27,7 +27,6 @@ pipeline{
       echo "deploying the application"
       echo "deploying version ${NEW_VERSION}"
      echo "deploying with ${SERVER_CREDENTIALS}"
-     sh "${SERVER_CREDENTIALS}"
     }
   }
  }
