@@ -5,7 +5,7 @@ pipeline{
   SERVER_CREDENTIALS = credentials('server-credentials')
  }
  parameters{
-  booleanParam(name:'executetests' , defaultValue:true , description:'test execution wrt value')
+  booleanParam(name:'executetests' , defaultValue:false , description:'test execution wrt value')
  }
  stages{
   stage("build"){
