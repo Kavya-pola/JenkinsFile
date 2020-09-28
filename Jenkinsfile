@@ -4,6 +4,9 @@ pipeline{
   NEW_VERSION = '1.3.0'
   SERVER_CREDENTIALS = credentials('server-credentials')
  }
+ parameters{
+  boolean(name:'executetests' , defaultValue:true , description:'test execution wrt value')
+ }
  stages{
   stage("build"){
     steps{
@@ -14,7 +17,7 @@ pipeline{
   stage("test"){
    when{
     expression{
-     BRANCH_NAME == 'dev'
+      params.executetests == true
     }
    }
     steps{
