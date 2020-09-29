@@ -8,6 +8,11 @@ pipeline{
   booleanParam(name:'executetests' , defaultValue:false , description:'test execution wrt value')
  }
  stages{
+  stage("clean"){
+   steps{
+    mvn clean test
+   }
+  }
   stage("build"){
     steps{
       echo "building the application"
