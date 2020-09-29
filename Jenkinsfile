@@ -10,7 +10,9 @@ pipeline{
  stages{
   stage("clean"){
    steps{
-    mvn clean test
+    script{
+     mvn clean test
+    }
    }
   }
   stage("build"){
